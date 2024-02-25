@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80FA9854-9B76-41C4-92A1-6D389017EDC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNetTranstor</RootNamespace>
+    <AssemblyName>Hook</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\引用\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPFLauncher 11301-cleaned, Version=1.13.0.34938, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\解密盒子\解密盒\WPFLauncher 11301-cleaned.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="DotNetTranstor\AssemblyUtil.cs" />
+    <Compile Include="DotNetTranstor\ClrMethodHook.cs" />
+    <Compile Include="DotNetTranstor\DestAndOri.cs" />
+    <Compile Include="DotNetTranstor\DetourFactory.cs" />
+    <Compile Include="DotNetTranstor\DetourWays\NativeDetourFor32Bit.cs" />
+    <Compile Include="DotNetTranstor\DetourWays\NativeDetourFor64Bit.cs" />
+    <Compile Include="DotNetTranstor\Extensions\TypeExtensions.cs" />
+    <Compile Include="DotNetTranstor\HookMethodAttribute.cs" />
+    <Compile Include="DotNetTranstor\IDetour.cs" />
+    <Compile Include="DotNetTranstor\IMethodHook.cs" />
+    <Compile Include="DotNetTranstor\IMethodHookWithSet.cs" />
+    <Compile Include="DotNetTranstor\IMethodMonitor.cs" />
+    <Compile Include="DotNetTranstor\LDasm.cs" />
+    <Compile Include="DotNetTranstor\MethodHook.cs" />
+    <Compile Include="DotNetTranstor\Monitor.cs" />
+    <Compile Include="DotNetTranstor\MonitorAttribute.cs" />
+    <Compile Include="DotNetTranstor\NativeAPI.cs" />
+    <Compile Include="DotNetTranstor\NonPublicParameterTypeAttribute.cs" />
+    <Compile Include="DotNetTranstor\OriginalAttribute.cs" />
+    <Compile Include="DotNetTranstor\OriginalMethodAttribute.cs" />
+    <Compile Include="DotNetTranstor\Protection.cs" />
+    <Compile Include="DotNetTranstor\RelocatedMethodAttribute.cs" />
+    <Compile Include="DotNetTranstor\RememberTypeAttribute.cs" />
+    <Compile Include="DotNetTranstor\ShadowMethodAttribute.cs" />
+    <Compile Include="LoginFucker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket.cs" />
+    <Compile Include="Tool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
